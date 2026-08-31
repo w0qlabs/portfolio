@@ -27,7 +27,7 @@
       <nav class="nav" id="site-nav" aria-label="Navegação principal">
         <a href="#solucoes" data-cursor="link">Soluções</a>
         <a href="#processo" data-cursor="link">Processo</a>
-        <a href="#cases" data-cursor="link">Cases</a>
+        <a href="cases.html" data-cursor="link">Cases</a>
         <a href="equipe.html" data-cursor="link">Equipe</a>
         <a href="#sobre" data-cursor="link">Sobre</a>
         <a href="#contato" class="nav-contact-mobile">Iniciar projeto <span aria-hidden="true">↗</span></a>
@@ -86,7 +86,7 @@
           <div class="launch-pad" aria-hidden="true"><span></span><span></span><span></span></div>
         </div>
       </div>
-      <div class="hero-index" aria-hidden="true"><span>W0Q—26</span><span>SC / BR</span></div>
+      <div class="hero-index" aria-hidden="true"><span>W0Q—26</span><span>AVARÉ / BR</span></div>
     </section>
 
     <div class="ticker" aria-label="Especialidades">
@@ -99,17 +99,65 @@
     <section class="services section" id="solucoes">
       <div class="shell">
         <div class="section-intro reveal">
-          <p class="kicker">Soluções / 06</p>
+          <p class="kicker">Soluções / 03 categorias</p>
           <h2>Do primeiro clique<br />à próxima escala.</h2>
           <p class="section-summary">Tecnologia não é o fim. É a infraestrutura para sua marca vender, operar e crescer melhor.</p>
         </div>
         <div class="service-list" data-reveal-group>
-          <article class="service-card reveal" data-cursor="view"><span class="service-number">01</span><div class="service-icon" aria-hidden="true">⌗</div><div><h3>Websites</h3><p>Experiências institucionais rápidas, claras e memoráveis — com presença de marca em cada detalhe.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-card reveal" data-cursor="view"><span class="service-number">02</span><div class="service-icon" aria-hidden="true">◫</div><div><h3>Landing pages</h3><p>Estratégia, copy e design orientados a uma única missão: transformar atenção em ação.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-card reveal" data-cursor="view"><span class="service-number">03</span><div class="service-icon" aria-hidden="true">◇</div><div><h3>Produtos SaaS</h3><p>Produtos digitais sob medida, do protótipo à arquitetura preparada para evoluir.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-card reveal" data-cursor="view"><span class="service-number">04</span><div class="service-icon" aria-hidden="true">↗</div><div><h3>Benchmark</h3><p>Leitura do mercado e dos concorrentes para revelar oportunidades antes de desenhar a solução.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-card reveal" data-cursor="view"><span class="service-number">05</span><div class="service-icon" aria-hidden="true">ϟ</div><div><h3>Performance</h3><p>Velocidade, SEO técnico e dados para seu produto render mais em todos os sentidos.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-card reveal" data-cursor="view"><span class="service-number">06</span><div class="service-icon" aria-hidden="true">&lt;/&gt;</div><div><h3>Suporte técnico</h3><p>Uma extensão do seu time para manter, melhorar ou destravar produtos existentes.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-card reveal">
+            <button class="service-trigger" type="button" id="service-websites-trigger" aria-expanded="false" aria-controls="service-websites-panel" data-cursor="view">
+              <span class="service-number">01</span>
+              <span class="service-icon" aria-hidden="true">⌗</span>
+              <span class="service-heading"><span class="service-title" role="heading" aria-level="3">Websites</span><span class="service-summary">Experiências institucionais rápidas, claras e memoráveis — com presença de marca em cada detalhe.</span></span>
+              <span class="service-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="service-panel" id="service-websites-panel" role="region" aria-labelledby="service-websites-trigger" hidden>
+              <div class="service-panel__inner">
+                <div class="service-options">
+                  <article class="service-option"><h3>Web Basic</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Web Pro</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Web Premium</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <button class="service-trigger" type="button" id="service-pages-trigger" aria-expanded="false" aria-controls="service-pages-panel" data-cursor="view">
+              <span class="service-number">02</span>
+              <span class="service-icon" aria-hidden="true">◫</span>
+              <span class="service-heading"><span class="service-title" role="heading" aria-level="3">Landing Pages</span><span class="service-summary">Estratégia, benchmark, copy e design orientados a uma única missão: transformar atenção em ação.</span></span>
+              <span class="service-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="service-panel" id="service-pages-panel" role="region" aria-labelledby="service-pages-trigger" hidden>
+              <div class="service-panel__inner">
+                <div class="service-options">
+                  <article class="service-option"><h3>Page Basic</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Page Pro</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Page Premium</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <button class="service-trigger" type="button" id="service-support-trigger" aria-expanded="false" aria-controls="service-support-panel" data-cursor="view">
+              <span class="service-number">03</span>
+              <span class="service-icon" aria-hidden="true">&lt;/&gt;</span>
+              <span class="service-heading"><span class="service-title" role="heading" aria-level="3">Suporte Tech</span><span class="service-summary">Uma extensão do seu time para manter, melhorar ou destravar produtos existentes.</span></span>
+              <span class="service-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="service-panel" id="service-support-panel" role="region" aria-labelledby="service-support-trigger" hidden>
+              <div class="service-panel__inner">
+                <div class="service-options service-options--support">
+                  <article class="service-option"><h3>Indicação de Hardware</h3><p>Indicações de peças, componentes e produtos pensadas de acordo com o objetivo, necessidade e orçamento do cliente.</p><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Performance</h3><p>Otimização de sistema, configurações e recursos do dispositivo para melhorar desempenho, estabilidade e experiência de uso.</p><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Assistência Técnica <span>— Avaré e região</span></h3><p>Suporte técnico presencial para manutenção, configuração e resolução de problemas em computadores e dispositivos.</p><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Equipe Dev</h3><p>Contratação dos desenvolvedores da equipe para atuar em demandas específicas, melhorias ou desenvolvimento de funcionalidades em projetos existentes.</p><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -139,18 +187,40 @@
 
     <section class="cases section" id="cases">
       <div class="shell">
-        <div class="cases-head reveal"><div><p class="kicker">Cases / laboratório aberto</p><h2>O próximo pode<br />ser o seu.</h2></div><p>Estamos selecionando os primeiros projetos para compor nosso portfólio público com contexto, processo e resultados reais.</p></div>
-        <a class="case-card reveal" href="#contato" data-cursor="project">
-          <div class="case-card__visual" aria-hidden="true"><span class="case-orbit"></span><img src="assets/img/mark.svg" alt="" /></div>
-          <div class="case-card__copy"><p>Próxima missão / agenda aberta</p><h3>Seu projeto pode inaugurar esta órbita.</h3><span>Construir um case juntos <i>↗</i></span></div>
-        </a>
+        <div class="cases-preview__head reveal">
+          <div><p class="kicker">Cases / seleção</p><h2>Projetos em<br />órbita.</h2></div>
+          <a class="text-link" href="cases.html" data-cursor="link"><span>Explorar todos os cases</span><i aria-hidden="true">↗</i></a>
+        </div>
+        <div class="cases-preview__list" data-reveal-group>
+          <a class="case-preview reveal" href="cases.html#gf-team" data-cursor="project"><span>01</span><h3>GF Team</h3><i aria-hidden="true">↗</i></a>
+          <a class="case-preview reveal" href="cases.html#new-style" data-cursor="project"><span>02</span><h3>New Style Barbearia</h3><i aria-hidden="true">↗</i></a>
+          <a class="case-preview reveal" href="cases.html#mundo-encantado" data-cursor="project"><span>03</span><h3>Mundo Encantado</h3><i aria-hidden="true">↗</i></a>
+        </div>
       </div>
     </section>
 
     <section class="contact section" id="contato">
       <div class="shell contact-grid">
-        <div class="contact-mark reveal" aria-hidden="true"><img src="assets/img/mark.svg" alt="" /></div>
-        <div class="contact-copy reveal"><p class="kicker">Próximo lançamento</p><h2>Tem uma ideia<br />em mente?</h2><p>Conte onde você está e onde quer chegar. A gente ajuda a desenhar a rota.</p><a class="contact-email magnetic" href="mailto:contato@w0q.com.br" data-cursor="cta"><span>contato@w0q.com.br</span><i aria-hidden="true">↗</i></a><div class="contact-meta"><span>Resposta em até 1 dia útil</span><a href="https://instagram.com/w0q.labs" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
+        <div class="contact-mark reveal" aria-hidden="true">
+          <div class="contact-orbit-visual">
+            <span class="lab-grid"></span>
+            <span class="lab-corner lab-corner--tl"></span>
+            <span class="lab-corner lab-corner--br"></span>
+            <span class="orbit orbit--outer"></span>
+            <span class="orbit orbit--inner"></span>
+            <span class="orbit-node"></span>
+            <img src="assets/img/mark.svg" alt="" />
+            <span class="contact-orbit-label">W0Q / PRÓXIMA MISSÃO</span>
+            <span class="contact-orbit-status"><i></i> ROTA DISPONÍVEL</span>
+          </div>
+        </div>
+        <div class="contact-copy reveal">
+          <p class="kicker">Próxima missão</p>
+          <h2>Seu projeto pode<br />ser o próximo<br />da <em>nossa órbita.</em></h2>
+          <p>Tem uma ideia, produto ou desafio em mente? Conte onde você está e onde quer chegar. A gente ajuda a desenhar a rota para transformar isso no próximo projeto da nossa órbita.</p>
+          <a class="contact-email magnetic" href="mailto:contato@w0q.com.br" data-cursor="cta"><span>contato@w0q.com.br</span><i aria-hidden="true">↗</i></a>
+          <div class="contact-meta"><span>Resposta em até 1 dia útil</span><a href="https://instagram.com/w0q.labs" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
+        </div>
       </div>
     </section>
   </main>
@@ -159,13 +229,13 @@
     <div class="shell footer-grid">
       <a class="brand" href="#top" aria-label="Voltar ao início"><img src="assets/img/logo.svg" alt="w0q Labs" width="142" height="48" /></a>
       <p>Código. Design. <span>Benchmark.</span> Escalabilidade.</p>
-      <div class="footer-links"><a href="#solucoes">Soluções</a><a href="#processo">Processo</a><a href="#cases">Cases</a><a href="equipe.html">Equipe</a></div>
+      <div class="footer-links"><a href="#solucoes">Soluções</a><a href="#processo">Processo</a><a href="cases.html">Cases</a><a href="equipe.html">Equipe</a></div>
       <div class="footer-bottom"><span>© 2026 w0q Labs</span><span>Avaré / SP</span></div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

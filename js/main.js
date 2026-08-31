@@ -41,6 +41,82 @@
     if (event.key === "Escape") closeMenu();
   });
 
+  const serviceCards = [...document.querySelectorAll(".service-card")];
+  const serviceTriggers = serviceCards.map((card) => card.querySelector(".service-trigger")).filter(Boolean);
+
+  const refreshScrollAnimations = () => {
+    window.ScrollTrigger?.refresh();
+    updateScrollState();
+  };
+
+  const setServiceCard = (card, expanded) => {
+    const trigger = card.querySelector(".service-trigger");
+    const panel = card.querySelector(".service-panel");
+    if (!trigger || !panel || trigger.getAttribute("aria-expanded") === String(expanded)) return;
+
+    trigger.setAttribute("aria-expanded", String(expanded));
+    card.classList.toggle("is-open", expanded);
+
+    if (reducedMotion) {
+      panel.hidden = !expanded;
+      panel.style.maxHeight = expanded ? "none" : "";
+      refreshScrollAnimations();
+      return;
+    }
+
+    if (expanded) {
+      panel.hidden = false;
+      panel.style.maxHeight = "0px";
+      panel.offsetHeight;
+      requestAnimationFrame(() => {
+        panel.style.maxHeight = `${panel.scrollHeight}px`;
+      });
+    } else {
+      panel.style.maxHeight = `${panel.scrollHeight}px`;
+      panel.offsetHeight;
+      requestAnimationFrame(() => {
+        panel.style.maxHeight = "0px";
+      });
+    }
+  };
+
+  serviceCards.forEach((card) => {
+    const trigger = card.querySelector(".service-trigger");
+    const panel = card.querySelector(".service-panel");
+    if (!trigger || !panel) return;
+
+    trigger.addEventListener("click", () => {
+      const willExpand = trigger.getAttribute("aria-expanded") !== "true";
+      serviceCards.forEach((otherCard) => {
+        if (otherCard !== card) setServiceCard(otherCard, false);
+      });
+      setServiceCard(card, willExpand);
+    });
+
+    panel.addEventListener("transitionend", (event) => {
+      if (event.propertyName !== "max-height") return;
+      const expanded = trigger.getAttribute("aria-expanded") === "true";
+      panel.hidden = !expanded;
+      panel.style.maxHeight = expanded ? "none" : "";
+      refreshScrollAnimations();
+    });
+  });
+
+  serviceTriggers.forEach((trigger, index) => {
+    trigger.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        trigger.click();
+        return;
+      }
+      const keys = ["ArrowDown", "ArrowUp", "Home", "End"];
+      if (!keys.includes(event.key)) return;
+      event.preventDefault();
+      const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? serviceTriggers.length - 1 : event.key === "ArrowDown" ? (index + 1) % serviceTriggers.length : (index - 1 + serviceTriggers.length) % serviceTriggers.length;
+      serviceTriggers[nextIndex].focus();
+    });
+  });
+
   if (finePointer && !reducedMotion) {
     const dot = document.querySelector(".cursor-dot");
     const orbit = document.querySelector(".cursor-orbit");
