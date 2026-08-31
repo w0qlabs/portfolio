@@ -277,18 +277,18 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .process-step h3 { position: relative; margin-top: clamp(5rem, 8vw, 8.5rem); font: 500 clamp(1.6rem, 2.2vw, 2.35rem) var(--display); letter-spacing: -.04em; }
 .process-step p { position: relative; margin-top: 1rem; color: var(--gray); font-size: .9rem; line-height: 1.7; }
 
-.cases { background: var(--ink); }
-.cases-preview__head { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: 4rem; }
-.cases-preview__head .kicker { margin-bottom: 1.8rem; }
-.cases-preview__head h2 { font: 500 clamp(3rem, 5.4vw, 6rem)/.94 var(--display); letter-spacing: -.065em; }
+.cases { padding: clamp(3rem, 5vw, 4.25rem) 0 clamp(2rem, 3.5vw, 3rem); background: var(--ink); }
+.cases-preview__head { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: 1.75rem; }
+.cases-preview__head .kicker { margin-bottom: 1rem; }
+.cases-preview__head h2 { font: 500 clamp(2.4rem, 4.5vw, 4.75rem)/.94 var(--display); letter-spacing: -.055em; }
 .cases-preview__head .text-link { flex-shrink: 0; margin-bottom: .5rem; }
 .cases-preview__list { border-top: 1px solid var(--line); }
-.case-preview { position: relative; min-height: 150px; display: grid; grid-template-columns: 70px 1fr 50px; align-items: center; gap: 2rem; padding: 1.5rem 0; overflow: hidden; border-bottom: 1px solid var(--line); isolation: isolate; transition: padding .45s var(--ease), border-color .35s; }
+.case-preview { position: relative; min-height: 82px; display: grid; grid-template-columns: 42px 1fr 34px; align-items: center; gap: 1rem; padding: .7rem 0; overflow: hidden; border-bottom: 1px solid var(--line); isolation: isolate; transition: padding .45s var(--ease), border-color .35s; }
 .case-preview::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(143,23,33,.32), transparent 70%); transform: translateX(-102%); transition: transform .55s var(--ease); }
 .case-preview > span { color: var(--gray-dark); font: 700 .58rem var(--mono); }
-.case-preview h3 { color: var(--paper); font: 500 clamp(2rem, 4vw, 4.5rem) var(--display); letter-spacing: -.055em; }
-.case-preview i { justify-self: end; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; color: var(--red-hot); font-style: normal; transition: transform .45s var(--ease), background .35s, color .35s; }
-.case-preview:hover { padding-inline: 1.25rem; border-color: var(--line-red); }
+.case-preview h3 { color: var(--paper); font: 500 clamp(1.25rem, 2.35vw, 2.55rem) var(--display); letter-spacing: -.04em; }
+.case-preview i { justify-self: end; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 50%; color: var(--red-hot); font-style: normal; transition: transform .45s var(--ease), background .35s, color .35s; }
+.case-preview:hover { padding-inline: .7rem; border-color: var(--line-red); }
 .case-preview:hover::before { transform: translateX(0); }
 .case-preview:hover i { color: var(--ink); background: var(--paper); transform: rotate(45deg); }
 
@@ -408,11 +408,13 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
   .manifesto-note { grid-template-columns: 32px 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .process-step { min-height: 290px; }
-  .cases-preview__head { align-items: flex-start; flex-direction: column; gap: 2rem; }
-  .case-preview { min-height: 120px; grid-template-columns: 34px minmax(0, 1fr) 36px; gap: .8rem; }
-  .case-preview:hover { padding-inline: .5rem; }
-  .case-preview h3 { font-size: clamp(1.8rem, 9vw, 2.8rem); }
-  .case-preview i { width: 34px; height: 34px; }
+  .cases { padding: 3.25rem 0 2.5rem; }
+  .cases-preview__head { align-items: flex-start; flex-direction: column; gap: 1.4rem; margin-bottom: 1.4rem; }
+  .cases-preview__head h2 { font-size: clamp(2rem, 10vw, 3rem); }
+  .case-preview { min-height: 74px; grid-template-columns: 28px minmax(0, 1fr) 28px; gap: .65rem; }
+  .case-preview:hover { padding-inline: .35rem; }
+  .case-preview h3 { font-size: clamp(1.25rem, 6.5vw, 1.8rem); }
+  .case-preview i { width: 28px; height: 28px; }
   .contact-mark { min-height: 240px; padding-bottom: 2rem; }
   .contact-orbit-visual { width: min(100%, 320px); }
   .contact-orbit-label { top: 24px; left: 72px; font-size: .44rem; }
