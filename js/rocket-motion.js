@@ -43,7 +43,7 @@
 
   pinFlamesToNozzle();
   const resetExhaust = () => {
-    gsap.set(exhaust, { xPercent: -50, scaleX: 0.72, scaleY: 0.45, opacity: 0, transformOrigin: "50% 0%" });
+    gsap.set(exhaust, { scaleX: 0.72, scaleY: 0.45, opacity: 0, transformOrigin: "50% 0%" });
   };
 
   resetExhaust();
@@ -156,6 +156,7 @@
       opacity: compactLayout ? 0.22 : 0,
       ease: "none",
       scrollTrigger: {
+        id: "rocket-scroll",
         trigger: ".hero",
         start: "top top",
         end: "bottom 40%",

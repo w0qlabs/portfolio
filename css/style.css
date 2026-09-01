@@ -202,9 +202,9 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .rocket-scroll, .rocket-flight, .rocket-depth { will-change: transform, opacity; }
 .rocket-float { transform-origin: 50% 44%; will-change: transform; }
 .rocket { display: block; position: relative; z-index: 2; width: 100%; overflow: visible; filter: drop-shadow(var(--rocket-shadow-x, 0px) 25px 28px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(225,29,46,.2)); will-change: transform, filter; }
-.rocket-exhaust { position: absolute; z-index: 1; left: 50%; top: 69.5%; width: 25%; height: 36%; opacity: 0; border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, rgba(255,244,245,.86) 0%, rgba(255,99,112,.62) 16%, rgba(255,36,56,.32) 42%, rgba(225,29,46,.08) 66%, transparent 76%); mix-blend-mode: screen; transform: translateX(-50%) scaleX(.72) scaleY(.45); transform-origin: 50% 0%; will-change: transform, opacity; }
+.rocket-exhaust { position: absolute; z-index: 1; left: 37.5%; top: 69.5%; width: 25%; height: 36%; opacity: 0; border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, rgba(255,244,245,.86) 0%, rgba(255,99,112,.62) 16%, rgba(255,36,56,.32) 42%, rgba(225,29,46,.08) 66%, transparent 76%); mix-blend-mode: screen; transform: scaleX(.72) scaleY(.45); transform-origin: 50% 0%; will-change: transform, opacity; }
 .rocket-exhaust span { position: absolute; inset: 0 36% 38%; border-radius: 50%; background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,159,168,.42) 52%, transparent); }
-.rocket-glow { position: absolute; z-index: 1; left: 50%; top: 69.5%; width: 82%; height: 34%; border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, rgba(255,36,56,.34) 0%, rgba(225,29,46,.12) 38%, transparent 72%); filter: blur(12px); opacity: .58; transform: translateX(-50%) scale(.92); transform-origin: 50% 0%; will-change: transform, opacity; }
+.rocket-glow { position: absolute; z-index: 1; left: 9%; top: 69.5%; width: 82%; height: 34%; border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, rgba(255,36,56,.34) 0%, rgba(225,29,46,.12) 38%, transparent 72%); filter: blur(12px); opacity: .58; transform: scale(.92); transform-origin: 50% 0%; will-change: transform, opacity; }
 .rocket-body { fill: #e11d2e; stroke: #ff6370; stroke-width: 2; }
 .rocket-detail { stroke: rgba(255,255,255,.26); stroke-width: 1.5; }
 .rocket-window { fill: #09090a; stroke: #fff4f5; stroke-width: 5; }
@@ -232,7 +232,8 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .launch-lab.is-launching .launch-control i { background: var(--red-hot); color: var(--white); }
 
 .ticker { overflow: hidden; border-block: 1px solid var(--line); padding: 1rem 0; background: #0b0b0c; }
-.ticker-track { display: flex; align-items: center; width: max-content; animation: ticker 32s linear infinite; }
+.ticker-track { display: flex; width: max-content; will-change: transform; animation: ticker 32s linear infinite; }
+.ticker-group { display: flex; flex: none; align-items: center; justify-content: space-around; min-width: 100vw; white-space: nowrap; }
 .ticker span { margin-inline: 2rem; color: #b6b0b2; font: 500 .72rem var(--mono); letter-spacing: .09em; text-transform: uppercase; }
 .ticker i { color: var(--red-hot); font-style: normal; font-size: .55rem; }
 
@@ -282,12 +283,13 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .service-option .service-option__placeholder { margin-top: 1.25rem; color: var(--coral); font: 700 .55rem/1.5 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
 
 @media (hover: hover) and (min-width: 621px) {
-  .service-card:hover .service-trigger, .service-card.is-open .service-trigger { padding-inline: 1.5rem; }
+  .service-card:hover .service-trigger, .service-card:focus-within .service-trigger, .service-card.is-open .service-trigger { padding-inline: 1.5rem; }
 }
 
-.manifesto { background: var(--paper); color: var(--ink); overflow: clip; }
-.manifesto::before { content: "W0Q"; position: absolute; right: -3vw; bottom: -10vw; color: rgba(109,13,24,.04); font: 700 34vw/.7 var(--display); letter-spacing: -.1em; }
-.manifesto-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(4rem, 9vw, 10rem); align-items: start; }
+.manifesto { z-index: 1; background: var(--paper); color: var(--ink); overflow: visible; }
+.manifesto::before { content: "W0Q"; position: absolute; z-index: 0; right: -1vw; bottom: -10vw; color: transparent; background: linear-gradient(to bottom, rgba(109,13,24,.04) 0, rgba(109,13,24,.04) calc(100% - 10vw), rgba(255,244,245,.055) calc(100% - 10vw), rgba(255,244,245,.025) calc(100% - 4vw), transparent 100%); background-clip: text; -webkit-background-clip: text; font: 700 34vw/.7 var(--display); letter-spacing: -.1em; pointer-events: none; }
+.manifesto::after { content: ""; position: absolute; z-index: 0; right: .8vw; bottom: -8vw; width: 8vw; height: 2.1vw; border-radius: .65vw; background: linear-gradient(90deg, rgba(255,244,245,.043), rgba(255,244,245,.02) 50%, rgba(255,244,245,.006)); clip-path: inset(0 40% 0 0); transform: rotate(44deg); transform-origin: right center; pointer-events: none; }
+.manifesto-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(4rem, 9vw, 10rem); align-items: start; }
 .manifesto .kicker { color: var(--red); }
 .manifesto-sticky { position: sticky; top: 8rem; }
 .formula { display: flex; align-items: center; gap: clamp(.5rem, 1.5vw, 1.25rem); margin-top: 3rem; }
@@ -362,7 +364,7 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .footer-bottom { display: flex; justify-content: flex-end; gap: 3rem; color: var(--gray-dark); font: 700 .55rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 
 @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(255,36,56,0), 0 0 24px var(--red); } }
-@keyframes ticker { to { transform: translateX(-50%); } }
+@keyframes ticker { to { transform: translate3d(-50%, 0, 0); } }
 @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
 @keyframes orbit-breathe { 50% { width: 81%; opacity: .6; } }
 @keyframes node-float { 50% { transform: translateY(-26px); opacity: .5; } }

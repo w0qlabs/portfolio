@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=10" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -26,11 +26,11 @@
 
       <nav class="nav" id="site-nav" aria-label="Navegação principal">
         <a href="#solucoes" data-cursor="link">Soluções</a>
+        <a href="#sobre" data-cursor="link">Sobre</a>
         <a href="#processo" data-cursor="link">Processo</a>
-        <a href="cases.html" data-cursor="link">Cases</a>
+        <a href="#cases" data-cursor="link">Cases</a>
         <a href="#contato" data-cursor="link">Contato</a>
         <a href="equipe.html" data-cursor="link">Equipe</a>
-        <a href="#sobre" data-cursor="link">Sobre</a>
         <a href="#contato" class="nav-contact-mobile">Iniciar projeto <span aria-hidden="true">↗</span></a>
       </nav>
 
@@ -106,15 +106,19 @@
 
     <div class="ticker" aria-label="Especialidades">
       <div class="ticker-track">
-        <span>Websites</span><i>✦</i><span>Landing pages</span><i>✦</i><span>SaaS</span><i>✦</i><span>Benchmark</span><i>✦</i><span>Performance</span><i>✦</i><span>Suporte técnico</span><i>✦</i>
-        <span aria-hidden="true">Websites</span><i aria-hidden="true">✦</i><span aria-hidden="true">Landing pages</span><i aria-hidden="true">✦</i><span aria-hidden="true">SaaS</span><i aria-hidden="true">✦</i><span aria-hidden="true">Benchmark</span><i aria-hidden="true">✦</i><span aria-hidden="true">Performance</span><i aria-hidden="true">✦</i><span aria-hidden="true">Suporte técnico</span><i aria-hidden="true">✦</i>
+        <div class="ticker-group">
+          <span>Websites</span><i>✦</i><span>Landing pages</span><i>✦</i><span>SaaS</span><i>✦</i><span>Benchmark</span><i>✦</i><span>Performance</span><i>✦</i><span>Suporte técnico</span><i>✦</i>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <span>Websites</span><i>✦</i><span>Landing pages</span><i>✦</i><span>SaaS</span><i>✦</i><span>Benchmark</span><i>✦</i><span>Performance</span><i>✦</i><span>Suporte técnico</span><i>✦</i>
+        </div>
       </div>
     </div>
 
     <section class="services section" id="solucoes">
       <div class="shell">
         <div class="section-intro reveal">
-          <p class="kicker">Soluções / 03 categorias</p>
+          <p class="kicker">Soluções / 04 categorias</p>
           <h2>Do primeiro clique<br />à próxima escala.</h2>
           <p class="section-summary">Tecnologia não é o fim. É a infraestrutura para sua marca vender, operar e crescer melhor.</p>
         </div>
@@ -156,8 +160,26 @@
           </article>
 
           <article class="service-card reveal">
-            <button class="service-trigger" type="button" id="service-support-trigger" aria-expanded="false" aria-controls="service-support-panel" data-cursor="view">
+            <button class="service-trigger" type="button" id="service-saas-trigger" aria-expanded="false" aria-controls="service-saas-panel" data-cursor="view">
               <span class="service-number">03</span>
+              <span class="service-icon" aria-hidden="true">∞</span>
+              <span class="service-heading"><span class="service-title" role="heading" aria-level="3">SaaS</span><span class="service-summary">Produtos digitais sob medida para validar uma ideia, organizar operações e crescer com uma base sólida.</span></span>
+              <span class="service-arrow" aria-hidden="true"></span>
+            </button>
+            <div class="service-panel" id="service-saas-panel" role="region" aria-labelledby="service-saas-trigger" hidden>
+              <div class="service-panel__inner">
+                <div class="service-options">
+                  <article class="service-option"><h3>MVP</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Produto sob medida</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                  <article class="service-option"><h3>Evolução e escala</h3><p class="service-option__placeholder">Conteúdo em elaboração.</p></article>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <button class="service-trigger" type="button" id="service-support-trigger" aria-expanded="false" aria-controls="service-support-panel" data-cursor="view">
+              <span class="service-number">04</span>
               <span class="service-icon" aria-hidden="true">&lt;/&gt;</span>
               <span class="service-heading"><span class="service-title" role="heading" aria-level="3">Suporte Tech</span><span class="service-summary">Uma extensão do seu time para manter, melhorar ou destravar produtos existentes.</span></span>
               <span class="service-arrow" aria-hidden="true"></span>
@@ -251,8 +273,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="js/main.js?v=4"></script>
+  <script src="js/main.js?v=5"></script>
   <script src="js/particle-network.js?v=1"></script>
-  <script src="js/rocket-motion.js?v=1"></script>
+  <script src="js/rocket-motion.js?v=3"></script>
 </body>
 </html>

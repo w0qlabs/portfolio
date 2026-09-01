@@ -45,7 +45,9 @@
   const serviceTriggers = serviceCards.map((card) => card.querySelector(".service-trigger")).filter(Boolean);
 
   const refreshScrollAnimations = () => {
-    window.ScrollTrigger?.refresh();
+    window.ScrollTrigger?.getAll?.()
+      .filter((instance) => instance.vars?.id !== "rocket-scroll")
+      .forEach((instance) => instance.refresh());
     updateScrollState();
   };
 
