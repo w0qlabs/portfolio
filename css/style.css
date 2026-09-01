@@ -72,7 +72,7 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
   border: 1px solid rgba(255, 77, 93, 0.8);
   display: grid;
   place-items: center;
-  transition: width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background .35s, border-color .35s;
+  transition: width .10s var(--ease), height .10s var(--ease), margin .10s var(--ease), background .10s, border-color .10s;
 }
 .cursor-orbit::after { content: ""; position: absolute; top: -2px; width: 3px; height: 3px; border-radius: 50%; background: var(--red-hot); }
 .cursor-orbit span { font: 700 0/1 var(--mono); letter-spacing: .08em; opacity: 0; transition: opacity .2s, font-size .2s; }
