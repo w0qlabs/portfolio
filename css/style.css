@@ -287,8 +287,8 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 }
 
 .manifesto { z-index: 1; background: var(--paper); color: var(--ink); overflow: visible; }
-.manifesto::before { content: "W0Q"; position: absolute; z-index: 0; right: -1vw; bottom: -10vw; color: transparent; background: linear-gradient(to bottom, rgba(109,13,24,.04) 0, rgba(109,13,24,.04) calc(100% - 10vw), rgba(255,244,245,.055) calc(100% - 10vw), rgba(255,244,245,.025) calc(100% - 4vw), transparent 100%); background-clip: text; -webkit-background-clip: text; font: 700 34vw/.7 var(--display); letter-spacing: -.1em; pointer-events: none; }
-.manifesto::after { content: ""; position: absolute; z-index: 0; right: .8vw; bottom: -8vw; width: 8vw; height: 2.1vw; border-radius: .65vw; background: linear-gradient(90deg, rgba(255,244,245,.043), rgba(255,244,245,.02) 50%, rgba(255,244,245,.006)); clip-path: inset(0 40% 0 0); transform: rotate(44deg); transform-origin: right center; pointer-events: none; }
+.manifesto::before { content: "W0Q"; position: absolute; z-index: 0; right: -4vw; bottom: -10vw; color: transparent; background: linear-gradient(to bottom, rgba(109,13,24,.04) 0, rgba(109,13,24,.04) calc(100% - 10vw), rgba(255,244,245,.055) calc(100% - 10vw), rgba(255,244,245,.025) calc(100% - 4vw), transparent 100%); background-clip: text; -webkit-background-clip: text; font: 700 34vw/.7 var(--display); letter-spacing: -.1em; pointer-events: none; }
+.manifesto::after { content: ""; position: absolute; z-index: 0; right: -2.2vw; bottom: -8vw; width: 8vw; height: 2.1vw; border-radius: .35vw; background: linear-gradient(90deg, rgba(255,244,245,.043), rgba(255,244,245,.02) 50%, rgba(255,244,245,.006)); clip-path: inset(0 40% 0 0); transform: rotate(44deg); transform-origin: right center; pointer-events: none; }
 .manifesto-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(4rem, 9vw, 10rem); align-items: start; }
 .manifesto .kicker { color: var(--red); }
 .manifesto-sticky { position: sticky; top: 8rem; }
