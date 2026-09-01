@@ -179,18 +179,6 @@
       });
     });
 
-    const lab = document.querySelector("[data-parallax]");
-    lab?.addEventListener("pointermove", (event) => {
-      const rect = lab.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-      const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-      lab.style.setProperty("--mx", x.toFixed(3));
-      lab.style.setProperty("--my", y.toFixed(3));
-    });
-    lab?.addEventListener("pointerleave", () => {
-      lab.style.setProperty("--mx", "0");
-      lab.style.setProperty("--my", "0");
-    });
   }
 
   if (window.gsap && window.ScrollTrigger && !document.hidden && !reducedMotion) {
@@ -236,11 +224,6 @@
     });
 
     if (!reducedMotion) {
-      gsap.to(".rocket", {
-        yPercent: -14,
-        ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1 },
-      });
       gsap.from(".formula span, .formula strong", {
         scale: 0.72,
         opacity: 0,

@@ -41,7 +41,9 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" data-particle-section>
+      <canvas class="particle-network" data-particle-network aria-hidden="true"></canvas>
+      <div class="particle-cursor-glow" data-particle-glow aria-hidden="true"></div>
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="kicker hero-kicker"><span></span> laboratório digital / disponível para novos projetos</p>
@@ -59,7 +61,7 @@
           </div>
         </div>
 
-        <div class="launch-lab" data-parallax aria-label="Ilustração interativa de um foguete sendo lançado de um laboratório digital">
+        <div class="launch-lab" data-parallax data-rocket-system aria-label="Ilustração interativa de um foguete sendo lançado de um laboratório digital">
           <div class="lab-grid" aria-hidden="true"></div>
           <div class="lab-corner lab-corner--tl" aria-hidden="true"></div>
           <div class="lab-corner lab-corner--br" aria-hidden="true"></div>
@@ -69,21 +71,34 @@
           <div class="orbit orbit--inner" aria-hidden="true"></div>
           <div class="orbit-node" aria-hidden="true"></div>
           <div class="rocket-wrap" aria-hidden="true">
-            <svg class="rocket" viewBox="0 0 220 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="rocket-body" d="M110 18C146 47 164 93 158 143C154 178 139 208 119 232H101C81 208 66 178 62 143C56 93 74 47 110 18Z" />
-              <path class="rocket-detail" d="M110 18V232M63 133H157" />
-              <circle class="rocket-window" cx="110" cy="105" r="25" />
-              <circle class="rocket-window-glint" cx="103" cy="97" r="7" />
-              <path class="rocket-fin" d="M67 163C42 179 29 212 31 250L85 216" />
-              <path class="rocket-fin" d="M153 163C178 179 191 212 189 250L135 216" />
-              <path class="rocket-nozzle" d="M91 232H129L121 253H99L91 232Z" />
-              <path class="flame flame--outer" d="M110 251C132 284 125 324 110 344C95 324 88 284 110 251Z" />
-              <path class="flame flame--inner" d="M110 269C120 290 117 314 110 326C103 314 100 290 110 269Z" />
-            </svg>
+            <div class="rocket-scroll">
+              <div class="rocket-flight">
+                <div class="rocket-depth">
+                  <div class="rocket-float">
+                    <div class="rocket-exhaust" aria-hidden="true"><span></span></div>
+                    <div class="rocket-glow"></div>
+                    <svg class="rocket" viewBox="0 0 220 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="rocket-body" d="M110 18C146 47 164 93 158 143C154 178 139 208 119 232H101C81 208 66 178 62 143C56 93 74 47 110 18Z" />
+                      <path class="rocket-detail" d="M110 18V232M63 133H157" />
+                      <circle class="rocket-window" cx="110" cy="105" r="25" />
+                      <circle class="rocket-window-glint" cx="103" cy="97" r="7" />
+                      <path class="rocket-fin" d="M67 163C42 179 29 212 31 250L85 216" />
+                      <path class="rocket-fin" d="M153 163C178 179 191 212 189 250L135 216" />
+                      <path class="rocket-nozzle" d="M91 232H129L121 253H99L91 232Z" />
+                      <path class="flame flame--outer" d="M110 251C132 284 125 324 110 344C95 324 88 284 110 251Z" />
+                      <path class="flame flame--inner" d="M110 269C120 290 117 314 110 326C103 314 100 290 110 269Z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="lab-metric lab-metric--left" aria-hidden="true"><span>PERFORMANCE</span><strong>98</strong><small>/100</small></div>
           <div class="lab-metric lab-metric--right" aria-hidden="true"><span>STATUS</span><strong>ONLINE</strong><small>● LIVE</small></div>
           <div class="launch-pad" aria-hidden="true"><span></span><span></span><span></span></div>
+          <button class="launch-control" type="button" data-launch-rocket aria-label="Iniciar lançamento do foguete">
+            <span data-launch-label>INICIAR LANÇAMENTO</span><i aria-hidden="true">↑</i>
+          </button>
         </div>
       </div>
       <div class="hero-index" aria-hidden="true"><span>W0Q—26</span><span>AVARÉ / BR</span></div>
@@ -237,5 +252,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="js/main.js?v=4"></script>
+  <script src="js/particle-network.js?v=1"></script>
+  <script src="js/rocket-motion.js?v=1"></script>
 </body>
 </html>
