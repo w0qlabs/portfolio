@@ -26,7 +26,17 @@
 .case-study { scroll-margin-top: 76px; background: #09090a; border-bottom: 1px solid var(--line); }
 .case-study--offset { background: #0d0d0f; }
 .case-study__header { display: grid; grid-template-columns: 1.2fr .8fr; align-items: end; gap: clamp(3rem, 8vw, 9rem); margin-bottom: clamp(3rem, 6vw, 5.5rem); }
-.case-study__header .kicker { margin-bottom: 1.6rem; }
+.case-study__identity { display: flex; align-items: center; gap: 1.25rem; min-height: 128px; margin-bottom: 1.6rem; }
+.case-study__identity .kicker { margin: 0; }
+.case-study__logo-slot { position: relative; display: grid; place-items: center; flex: 0 0 220px; width: 220px; height: 128px; overflow: hidden; border: 1px solid var(--line); background: rgba(255,255,255,.025); }
+.case-study__logo-slot img { display: block; max-width: calc(100% - 1.25rem); max-height: calc(100% - 1rem); width: auto; height: auto; object-fit: contain; }
+.case-study__logo-slot[data-logo-slot="logo-mundo-encantado"] img { max-width: calc(100% - 2rem); max-height: calc(100% - 2rem); }
+.case-study__logo-slot span { display: none; color: var(--gray-dark); font: 700 .48rem var(--mono); letter-spacing: .1em; text-align: center; }
+.case-study__logo-slot.is-empty span { display: block; }
+.case-study__logo-slot.is-empty::before, .case-study__logo-slot.is-empty::after { content: ""; position: absolute; width: 8px; height: 8px; border-color: var(--red-hot); }
+.case-study__logo-slot.is-empty::before { top: 8px; left: 8px; border-top: 1px solid; border-left: 1px solid; }
+.case-study__logo-slot.is-empty::after { right: 8px; bottom: 8px; border-right: 1px solid; border-bottom: 1px solid; }
+.case-study__header > div > .kicker, .case-study__identity .kicker { margin-bottom: 0; }
 .case-study__header h2 { color: var(--paper); font: 500 clamp(3.8rem, 7.2vw, 8rem)/.87 var(--display); letter-spacing: -.075em; }
 .case-study__header h2 span { display: block; color: var(--red-hot); }
 .case-study__summary { max-width: 42ch; justify-self: end; color: var(--gray); font-size: 1.05rem; line-height: 1.75; }
@@ -80,6 +90,9 @@
   .cases-hero__orbit { width: 98vw; right: -58vw; opacity: .45; }
   .cases-hero__meta { display: none; }
   .case-study__header h2 { font-size: clamp(3rem, 14vw, 4.4rem); }
+  .case-study__identity { align-items: flex-start; flex-direction: column; gap: 1rem; min-height: 0; }
+  .case-study__identity { min-height: 0; }
+  .case-study__logo-slot { flex-basis: 96px; width: 148px; height: 96px; }
   .case-study__summary { font-size: .92rem; }
   .case-study__visual { aspect-ratio: 1.2; }
   .case-study__visual::before, .case-study__visual::after { width: 38px; height: 38px; }
