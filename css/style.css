@@ -43,6 +43,17 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .shell { width: min(calc(100% - 5rem), var(--shell)); margin-inline: auto; }
 .section { padding: clamp(6.5rem, 10vw, 10rem) 0; position: relative; }
 
+/* Decorative flight sits above section surfaces and below their content. */
+main > section > .shell, .site-footer > .shell { position: relative; z-index: 2; }
+.site-voyager { position: fixed; inset: 0; z-index: 1; overflow: clip; pointer-events: none; contain: strict; }
+.site-voyager img { position: absolute; top: 0; left: 0; width: clamp(100px, 11vw, 160px); height: auto; opacity: .24; will-change: transform; user-select: none; }
+@media (max-width: 620px) {
+  .site-voyager img { width: 86px; opacity: .17; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-voyager img { will-change: auto; }
+}
+
 .noise {
   position: fixed;
   inset: 0;
@@ -197,23 +208,18 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .orbit--outer { width: 76%; aspect-ratio: 1; border-color: rgba(255,36,56,.2); animation: orbit-breathe 5s ease-in-out infinite; }
 .orbit--inner { width: 52%; aspect-ratio: 1; border-style: dashed; animation: spin 25s linear infinite; }
 .orbit-node { position: absolute; left: 12%; top: 43%; width: 8px; height: 8px; border-radius: 50%; background: var(--red-hot); box-shadow: 0 0 18px var(--red-hot); animation: node-float 4s ease-in-out infinite; }
-.rocket-wrap { position: absolute; z-index: 3; width: 38%; left: 31%; top: 15%; perspective: 1000px; transform-style: preserve-3d; }
+.rocket-wrap { position: absolute; z-index: 3; width: 64%; left: 10%; top: 19%; pointer-events: none; }
 .rocket-scroll, .rocket-flight, .rocket-depth, .rocket-float { position: relative; width: 100%; transform-style: preserve-3d; }
 .rocket-scroll, .rocket-flight, .rocket-depth { will-change: transform, opacity; }
 .rocket-float { transform-origin: 50% 44%; will-change: transform; }
-.rocket { display: block; position: relative; z-index: 2; width: 100%; overflow: visible; filter: drop-shadow(var(--rocket-shadow-x, 0px) 25px 28px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(225,29,46,.2)); will-change: transform, filter; }
-.rocket-exhaust { position: absolute; z-index: 1; left: 37.5%; top: 69.5%; width: 25%; height: 36%; opacity: 0; border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, rgba(255,244,245,.86) 0%, rgba(255,99,112,.62) 16%, rgba(255,36,56,.32) 42%, rgba(225,29,46,.08) 66%, transparent 76%); mix-blend-mode: screen; transform: scaleX(.72) scaleY(.45); transform-origin: 50% 0%; will-change: transform, opacity; }
-.rocket-exhaust span { position: absolute; inset: 0 36% 38%; border-radius: 50%; background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,159,168,.42) 52%, transparent); }
-.rocket-glow { position: absolute; z-index: 1; left: 9%; top: 69.5%; width: 82%; height: 34%; border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, rgba(255,36,56,.34) 0%, rgba(225,29,46,.12) 38%, transparent 72%); filter: blur(12px); opacity: .58; transform: scale(.92); transform-origin: 50% 0%; will-change: transform, opacity; }
-.rocket-body { fill: #e11d2e; stroke: #ff6370; stroke-width: 2; }
-.rocket-detail { stroke: rgba(255,255,255,.26); stroke-width: 1.5; }
-.rocket-window { fill: #09090a; stroke: #fff4f5; stroke-width: 5; }
-.rocket-window-glint { fill: #ff7f8c; }
-.rocket-fin { fill: #8f1721; stroke: #ff4d5d; stroke-width: 2; }
-.rocket-nozzle { fill: #2b292a; stroke: #8c8588; stroke-width: 2; }
-.flame { transform-box: view-box; will-change: transform, opacity, filter; }
-.flame--outer { fill: #e11d2e; transform-origin: 110px 251px; }
-.flame--inner { fill: #fff4f5; transform-origin: 110px 269px; }
+.rocket { display: block; position: relative; width: 100%; height: auto; aspect-ratio: 850 / 926; overflow: visible; }
+.rocket-exhaust, .rocket-flame, .flame, .rocket-glow { transform-box: view-box; }
+.rocket-sparks circle { opacity: 0; }
+.rocket-smoke { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.rocket-smoke span { position: absolute; width: 38px; height: 32px; left: 0; top: 0; opacity: 0; border-radius: 46% 54% 42% 58%; background: #b6aaa3; }
+.rocket-smoke span:nth-child(3n) { background: #ead8c7; }
+.rocket-smoke span:nth-child(2n) { border-radius: 60% 40% 58% 42%; background: #706c70; }
+.rocket-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .lab-metric { position: absolute; z-index: 6; display: grid; padding: .8rem; min-width: 105px; background: rgba(8,8,8,.68); border: 1px solid var(--line); backdrop-filter: blur(10px); font-family: var(--mono); }
 .lab-metric span { color: var(--gray-dark); font-size: .48rem; letter-spacing: .1em; }
 .lab-metric strong { margin-top: .2rem; color: var(--white); font-size: 1.45rem; line-height: 1; }
@@ -228,6 +234,8 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
 .launch-control i { display: grid; width: 19px; height: 19px; place-items: center; border: 1px solid rgba(255,36,56,.52); color: var(--coral); font-style: normal; font-size: .75rem; transition: transform .3s var(--ease), background .3s var(--ease), color .3s var(--ease); }
 .launch-control:hover, .launch-control:focus-visible { border-color: rgba(255,36,56,.58); background: rgba(20,9,10,.88); color: var(--white); outline: none; }
 .launch-control:hover i, .launch-control:focus-visible i { transform: translateY(-2px); background: var(--red-hot); color: var(--white); }
+.launch-control { min-height: 44px; min-width: 145px; justify-content: space-between; font-size: .6rem; }
+.launch-control:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
 .launch-control:disabled { cursor: wait; opacity: .7; }
 .launch-lab.is-launching .launch-control i { background: var(--red-hot); color: var(--white); }
 
@@ -429,7 +437,7 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .button { width: 100%; }
   .launch-lab { aspect-ratio: .82; }
-  .rocket-wrap { width: 40%; left: 30%; }
+  .rocket-wrap { width: 61%; left: 15%; top: 23%; }
   .launch-control { right: 5%; bottom: 4%; }
   .lab-label--side { display: none; }
   .lab-metric--left { bottom: 5%; }
@@ -480,7 +488,7 @@ button { border: 0; background: none; color: inherit; font: inherit; cursor: poi
   .lab-metric { min-width: 88px; padding: .65rem; }
   .lab-metric strong { font-size: 1.2rem; }
   .lab-label--top { left: 72px; font-size: .46rem; }
-  .launch-control { min-height: 32px; padding: .45rem .5rem .45rem .6rem; font-size: .42rem; }
+  .launch-control { min-height: 44px; min-width: 136px; padding: .45rem .5rem .45rem .6rem; font-size: .56rem; }
   .launch-control i { width: 18px; height: 18px; }
   .service-title { font-size: 1.65rem; }
   .manifesto-copy h2 { font-size: 2.2rem; }
