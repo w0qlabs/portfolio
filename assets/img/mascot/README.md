@@ -8,7 +8,9 @@ O site usa os PNGs em camadas SVG e a sequência em `js/rocket-motion.js`. O GIF
 
 O capacete, o braço e a chama são recortados nas coordenadas originais da imagem, sem redesenhar o personagem. Os primeiros 135 pontos da chama ficam presos ao bocal; só a cauda se alonga, com uma sobreposição de 25 pontos que impede uma abertura durante a ignição. O exportador verifica a junção em todos os quadros. Fumaça e partículas usam um conjunto fixo de elementos reutilizados a cada lançamento.
 
-`background-ship.webp` é a nave decorativa inspirada no mascote, otimizada para 384 × 384; `background-ship.png` é sua matriz com transparência. `js/background-ship.js` faz o voo por uma curva contínua nas três páginas, atrás do conteúdo. A orientação acompanha a trajetória, a animação pausa em abas ocultas e fica estática com movimento reduzido.
+`background-ship.webp` é a nave decorativa inspirada no mascote, otimizada para 384 × 384; `background-ship.png` é sua matriz com transparência. Nas três páginas, um SVG reutiliza esse mesmo WebP em dois recortes: fuselagem e chama. A chama pulsa no eixo do bocal, sem mover a nave inteira ou carregar outra imagem.
+
+`js/background-ship.js` usa um único tween GSAP para o voo em oito e a propulsão. A trajetória fica dentro da área visível, com margens para as curvas e a navbar, independentemente da rolagem do documento. O ciclo dura 26 segundos no desktop e 30 no mobile; a orientação acompanha a tangente da curva. Resize e Visual Viewport recalculam os limites, incluindo zoom e mudanças na área útil do navegador móvel. Abas ocultas pausam o efeito; movimento reduzido deixa a nave estática, com chama sem pulsação. A limpeza de listeners e tweens ocorre pelo contexto GSAP e pelo ciclo de vida da página.
 
 ## Gerar novamente o GIF
 

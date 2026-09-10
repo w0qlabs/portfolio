@@ -10,11 +10,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=14" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
 </head>
 <body>
   <div class="site-voyager" data-background-ship aria-hidden="true">
-    <img src="assets/img/mascot/background-ship.webp" width="384" height="384" alt="" decoding="async" draggable="false" />
+    <svg class="site-voyager__ship" viewBox="0 0 384 384" width="384" height="384" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Separate the existing sprite at the nozzle, keeping its original artwork. -->
+        <clipPath id="voyager-body"><path d="M0 0H384V384H124V283L84 247H0Z" /></clipPath>
+        <clipPath id="voyager-flame"><path d="M0 247H84L124 283V384H0Z" /></clipPath>
+      </defs>
+      <g transform="translate(104 265) rotate(45)">
+        <g data-voyager-flame>
+          <g transform="rotate(-45) translate(-104 -265)">
+            <image href="assets/img/mascot/background-ship.webp" width="384" height="384" clip-path="url(#voyager-flame)" />
+          </g>
+        </g>
+      </g>
+      <image href="assets/img/mascot/background-ship.webp" width="384" height="384" clip-path="url(#voyager-body)" />
+    </svg>
   </div>
   <div class="noise" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -252,29 +266,45 @@
       </div>
     </section>
 
-    <section class="process section" id="processo">
+    <section class="cases section" id="cases" aria-labelledby="cases-heading">
       <div class="shell">
-        <div class="section-intro section-intro--process reveal"><p class="kicker">Processo / 04 estágios</p><h2>Da hipótese<br />ao ar.</h2><p class="section-summary">Um processo direto, visível e colaborativo. Cada etapa reduz incertezas antes da próxima.</p></div>
-        <div class="process-grid" data-reveal-group>
-          <article class="process-step reveal"><span>01 / Imersão</span><h3>Entender</h3><p>Negócio, público, metas e contexto antes de abrir qualquer ferramenta.</p></article>
-          <article class="process-step reveal"><span>02 / Direção</span><h3>Definir</h3><p>Estratégia, arquitetura e linguagem visual alinhadas em uma direção clara.</p></article>
-          <article class="process-step reveal"><span>03 / Construção</span><h3>Materializar</h3><p>Design e código avançam juntos em ciclos curtos de validação.</p></article>
-          <article class="process-step reveal"><span>04 / Evolução</span><h3>Escalar</h3><p>Lançamento, leitura de dados e uma base pronta para a próxima versão.</p></article>
+        <div class="cases-preview__head reveal">
+          <div><p class="kicker">Cases / seleção</p><h2 id="cases-heading">Projetos em<br /><em>órbita.</em></h2></div>
+          <p class="section-summary">Do contexto de cada negócio à sua presença digital. Conheça o que colocamos no ar.</p>
         </div>
+        <div class="cases-preview__list" data-reveal-group>
+          <a class="case-preview case-preview--featured reveal" href="cases.html#gf-team" data-cursor="project" aria-labelledby="case-gfteam-title case-gfteam-cta">
+            <div class="case-preview__meta"><span>Case 01 / Landing page</span><span>Esporte</span></div>
+            <div class="case-preview__art"><img src="assets/img/cases/logo-gfteam.webp" alt="" width="960" height="640" loading="lazy" decoding="async" /></div>
+            <div class="case-preview__copy"><h3 id="case-gfteam-title">GFTeam<br />Avaré</h3><p>A academia, suas modalidades e o caminho até a primeira aula.</p></div>
+            <div class="case-preview__footer"><span id="case-gfteam-cta">Explorar case</span><i aria-hidden="true">↗</i></div>
+          </a>
+          <a class="case-preview case-preview--new-style reveal" href="cases.html#new-style" data-cursor="project" aria-labelledby="case-new-style-title case-new-style-cta">
+            <div class="case-preview__meta"><span>Case 02 / Site institucional</span><span>Barbearia</span></div>
+            <div class="case-preview__art"><img src="assets/img/cases/logo-new-style.webp" alt="" width="640" height="293" loading="lazy" decoding="async" /></div>
+            <div class="case-preview__copy"><h3 id="case-new-style-title">New Style<br />Barbearia</h3><p>A identidade do espaço, mais perto do próximo agendamento.</p></div>
+            <div class="case-preview__footer"><span id="case-new-style-cta">Explorar case</span><i aria-hidden="true">↗</i></div>
+          </a>
+          <a class="case-preview case-preview--mundo reveal" href="cases.html#mundo-encantado" data-cursor="project" aria-labelledby="case-mundo-title case-mundo-cta">
+            <div class="case-preview__meta"><span>Case 03 / Catálogo digital</span><span>Eventos</span></div>
+            <div class="case-preview__art"><img src="assets/img/cases/logo-mundo-encantado.webp" alt="" width="560" height="408" loading="lazy" decoding="async" /></div>
+            <div class="case-preview__copy"><h3 id="case-mundo-title">Mundo<br />Encantado</h3><p>Da escolha dos itens da festa ao orçamento pelo WhatsApp.</p></div>
+            <div class="case-preview__footer"><span id="case-mundo-cta">Explorar case</span><i aria-hidden="true">↗</i></div>
+          </a>
+        </div>
+        <div class="cases-preview__foot reveal"><span>Contexto, solução e desenvolvimento.</span><a class="text-link" href="cases.html" data-cursor="link"><span>Explorar todos os cases</span><i aria-hidden="true">↗</i></a></div>
       </div>
     </section>
 
-    <section class="cases section" id="cases">
-      <div class="shell">
-        <div class="cases-preview__head reveal">
-          <div><p class="kicker">Cases / seleção</p><h2>Projetos em<br />órbita.</h2></div>
-          <a class="text-link" href="cases.html" data-cursor="link"><span>Explorar todos os cases</span><i aria-hidden="true">↗</i></a>
-        </div>
-        <div class="cases-preview__list" data-reveal-group>
-          <a class="case-preview reveal" href="cases.html#gf-team" data-cursor="project"><span>01</span><h3>GF Team</h3><i aria-hidden="true">↗</i></a>
-          <a class="case-preview reveal" href="cases.html#new-style" data-cursor="project"><span>02</span><h3>New Style Barbearia</h3><i aria-hidden="true">↗</i></a>
-          <a class="case-preview reveal" href="cases.html#mundo-encantado" data-cursor="project"><span>03</span><h3>Mundo Encantado</h3><i aria-hidden="true">↗</i></a>
-        </div>
+    <section class="process section" id="processo" aria-labelledby="process-heading">
+      <div class="shell process-layout">
+        <div class="process-intro reveal"><p class="kicker">Processo / 04 estágios</p><h2 id="process-heading">Da hipótese ao ar.</h2><p>Por trás de cada projeto, um processo direto, visível e colaborativo.</p></div>
+        <ol class="process-list" data-reveal-group>
+          <li class="process-step reveal"><span class="process-step__number" aria-hidden="true">01</span><h3>Entender</h3><p>Negócio, público, metas e contexto.</p></li>
+          <li class="process-step reveal"><span class="process-step__number" aria-hidden="true">02</span><h3>Definir</h3><p>Estratégia, arquitetura e linguagem visual.</p></li>
+          <li class="process-step reveal"><span class="process-step__number" aria-hidden="true">03</span><h3>Materializar</h3><p>Design e código em ciclos de validação.</p></li>
+          <li class="process-step reveal"><span class="process-step__number" aria-hidden="true">04</span><h3>Escalar</h3><p>Lançamento, dados e evolução contínua.</p></li>
+        </ol>
       </div>
     </section>
 
@@ -316,7 +346,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="js/main.js?v=5"></script>
-  <script src="js/background-ship.js?v=1"></script>
+  <script src="js/background-ship.js?v=3"></script>
   <script src="js/particle-network.js?v=1"></script>
   <script src="js/rocket-motion.js?v=5"></script>
 </body>
